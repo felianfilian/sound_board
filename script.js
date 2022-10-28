@@ -1,4 +1,4 @@
-const sounds = ["button", "coin", "impact", "pause"];
+const sounds = ["sneaky", "pixel", "impact", "pause"];
 const buttons = document.getElementById("buttons");
 
 sounds.forEach((sound) => {
@@ -6,9 +6,19 @@ sounds.forEach((sound) => {
   btn.classList.add("btn");
   btn.innerText = sound;
 
+  StopSound();
+
   btn.addEventListener("click", () => {
     document.getElementById(sound).play();
   });
 
   buttons.appendChild(btn);
 });
+
+function StopSound() {
+  sounds.forEach((sound) => {
+    const song = document.getElementById(sound);
+    song.pause();
+    song.currentTime = 0;
+  });
+}
