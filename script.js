@@ -5,10 +5,8 @@ sounds.forEach((sound) => {
   const btn = document.createElement("button");
   btn.classList.add("btn");
   btn.innerText = sound;
-
-  StopSound();
-
   btn.addEventListener("click", () => {
+    StopSound();
     document.getElementById(sound).play();
   });
 
